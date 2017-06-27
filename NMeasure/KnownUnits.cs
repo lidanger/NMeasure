@@ -160,8 +160,8 @@ namespace NMeasure
             // This is a self-check, since the functionality heavily depends on all units being different and there is an off-chance that
             // a Hashcode is not unique (especially when somebody copy-pastes a Unit)
             var allUnits = typeof(U)
-                .GetRuntimeFields()
-                .Where(fi => typeof(Unit).GetTypeInfo().IsAssignableFrom(fi.FieldType))
+                .GetFields()
+                .Where(fi => typeof(Unit).IsAssignableFrom(fi.FieldType))
                 .Select(fi => fi.GetValue(null))
                 .OfType<Unit>().ToList();
 

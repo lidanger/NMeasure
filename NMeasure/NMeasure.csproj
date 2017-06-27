@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32925FF8-0E2F-4F54-A9B5-FF780DC09818}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NMeasure</RootNamespace>
+    <AssemblyName>NMeasure</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Areas.cs" />
+    <Compile Include="Configuration\EnergyAndForce.cs" />
+    <Compile Include="Configuration\Lengths.cs" />
+    <Compile Include="Configuration\Masses.cs" />
+    <Compile Include="Configuration\PhysicalConstants.cs" />
+    <Compile Include="Configuration\Pressures.cs" />
+    <Compile Include="Configuration\StandardUnitConfiguration.cs" />
+    <Compile Include="Configuration\Temperatures.cs" />
+    <Compile Include="Configuration\Times.cs" />
+    <Compile Include="Configuration\UnitConfiguration.cs" />
+    <Compile Include="Configuration\UnitSystem.cs" />
+    <Compile Include="Converting\ComplexConversion.cs" />
+    <Compile Include="Converting\ConversionTracker.cs" />
+    <Compile Include="Converting\IConversion.cs" />
+    <Compile Include="Converting\InvariantConversion.cs" />
+    <Compile Include="Converting\UnitGraph.cs" />
+    <Compile Include="Converting\UnitGraphEdge.cs" />
+    <Compile Include="Converting\UnitGraphEdgeSequence.cs" />
+    <Compile Include="Converting\UnitGraphNode.cs" />
+    <Compile Include="ExpandedUnit.cs" />
+    <Compile Include="KnownUnits.cs" />
+    <Compile Include="Measure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="UnitEqualityComparer.cs" />
+    <Compile Include="UnitExtensions.cs" />
+    <Compile Include="UnitIndex.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
